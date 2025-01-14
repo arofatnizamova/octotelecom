@@ -13,7 +13,6 @@ body {
 
 .container-fluid {
 	padding: 0 100px;
-	overflow: hidden;
 }
 
 .container-header {
@@ -361,23 +360,11 @@ video {
 .underlined {
 	border-bottom: 2px solid rgba(0, 0, 0, 0.2);
 }
-
-.news-sidebar {
-	width: 200px;
-	height: 200px;
+.news-sidebar{
+	width: 500px;
+	height: 500px;
 	background-color: red;
-	position: -webkit-sticky;
-	/* Для Safari */
-	position: sticky;
-	top: 0;
-	right: 0;
 }
-
-.main-content {
-	overflow-y: auto;
-	display: flex;
-}
-
 .information-box {
 	background-color: #F3F3F3;
 	border: 2px solid black;
