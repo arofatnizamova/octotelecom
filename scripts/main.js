@@ -1,21 +1,24 @@
 $(document).ready(function() {
 	//sliders
-    $('.slider').slick({
-		infinite: true,
-		slidesToShow: 1,
-		slidesToScroll: 1,
-		arrows: true,
-		prevArrow: $('.slider-prev'),
-		nextArrow: $('.slider-next'),
+  $('.slider').each(function(index, element) {
 
-	});
+    let options = {
+      infinite: true,
+		  slidesToShow: 1,
+		  slidesToScroll: 1,
+		  arrows: true,
+      prevArrow: $(this).parent().find('.slider-prev'),
+      nextArrow: $(this).parent().find('.slider-next')
+    }
+        $(this).slick(options);
+    });
 
 	//animation on scroll
 	AOS.init({
-		duration: 700,
+		duration: 800,
 	});
    
-  hljs.highlightAll();
+  
 
 	//canvas rising line on a graph
 	const canvas = document.getElementById('myCanvas');

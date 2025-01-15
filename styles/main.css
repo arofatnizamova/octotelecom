@@ -426,7 +426,7 @@ video {
 .collapse-custom{
 	box-shadow: none !important;
 }
-.accordion-button:not(.collapsed){
+.accordion-button:not(.collapsed) {
 	box-shadow: none;
 }
 /*media*/
