@@ -16,7 +16,21 @@ $(document).ready(function() {
 	//animation on scroll
 	AOS.init({
 		duration: 800,
-	});
+  });
+  
+  //sidebar-menu 
+     function toggleStickyClass() {
+        if ($(window).width() < 990) {
+            $('.active-sidebar').removeClass('sticky-top');
+        } else {
+            $('.active-sidebar').addClass('sticky-top');
+        }
+    }
+    toggleStickyClass();
+
+    $(window).resize(function () {
+        toggleStickyClass();
+    });
    
   
 
