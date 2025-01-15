@@ -11,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
     <link rel="stylesheet" href="styles/main.css">
 </head>
 
@@ -63,24 +64,73 @@
     <section class="my-3">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-4">
-                    <nav id="navbar-example3" class="h-100 flex-column align-items-stretch pe-4 border-end">
-                        <nav class="nav nav-pills flex-column">
-                            <a class="nav-link" href="#item-1">Item 1</a>
-                            <nav class="nav nav-pills flex-column">
-                                <a class="nav-link ms-3 my-1" href="#item-1-1">Item 1-1</a>
-                                <a class="nav-link ms-3 my-1" href="#item-1-2">Item 1-2</a>
-                            </nav>
-                            <a class="nav-link" href="#item-2">Item 2</a>
-                            <a class="nav-link" href="#item-3">Item 3</a>
-                            <nav class="nav nav-pills flex-column">
-                                <a class="nav-link ms-3 my-1" href="#item-3-1">Item 3-1</a>
-                                <a class="nav-link ms-3 my-1" href="#item-3-2">Item 3-2</a>
-                            </nav>
-                        </nav>
-                    </nav>
+                <div class="col-lg-4 sticky-top" style="height: fit-content;">
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button accordion-sidebar-button fs-paragraph-2 fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                                    aria-expanded="true" aria-controls="collapseOne">
+                                    JSONv2
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse-custom collapse show" data-bs-parent="#accordionExample">
+                                <div class="accordion-sidebar-body">
+                                    <nav id="navbar-example3" class="h-100 flex-column align-items-stretch px-4 pb-3 sidebar-menu">
+                                        <nav class="nav nav-pills flex-column">
+                                            <a class="nav-link" href="#item-1">1. Общее описание</a>
+                                            <nav class="nav nav-pills flex-column">
+                                                <a class="nav-link ms-3 my-1" href="#item-1-1">Item 1-1</a>
+                                                <a class="nav-link ms-3 my-1" href="#item-1-2">Item 1-2</a>
+                                            </nav>
+                                            <a class="nav-link" href="#item-2">1.2. Коды ошибок</a>
+                                            <a class="nav-link" href="#item-3">1.3. Item 3</a>
+                                            <nav class="nav nav-pills flex-column">
+                                                <a class="nav-link ms-3 my-1" href="#item-3-1">1.3.1. Параметры запроса</a>
+                                                <a class="nav-link ms-3 my-1" href="#item-3-2">1.3.2. Отправка статусов сообщений</a>
+                                                <a class="nav-link ms-3 my-1" href="#item-3-3">1.3.3. Примеры</a>
+                                            </nav>
+                                        </nav>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button fs-paragraph-2 fw-semibold accordion-sidebar-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Old_json
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse-custom collapse" data-bs-parent="#accordionExample">
+                                <div class="accordion-sidebar-body">
+                                    <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse
+                                    plugin adds the appropriate classes that we use to style each element. These classes control the overall
+                                    appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with
+                                    custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go
+                                    within the <code>.accordion-body</code>, though the transition does limit overflow.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button accordion-sidebar-button collapsed fs-paragraph-2 fw-semibold" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    SMPP
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse-custom collapse" data-bs-parent="#accordionExample">
+                                <div class="accordion-sidebar-body">
+                                    <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse
+                                    plugin adds the appropriate classes that we use to style each element. These classes control the overall
+                                    appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with
+                                    custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go
+                                    within the <code>.accordion-body</code>, though the transition does limit overflow.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-8">
+                <div class="col-lg-8">
                     <h3 class="fs-title-2 fw-bold mb-5">
                         База знаний
                     </h3>
@@ -102,148 +152,152 @@
                                 будут в том же порядке.</p>
                             <p class="fs-paragraph-2 mb-3">
                                 Если запрос содержит ошибку (код 400), то в теле ответа обязательно присутствует JSON объект со следующими полями.</p>
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Имя</th>
-                                        <th scope="col">Тип</th>
-                                        <th scope="col">Обязательность</th>
-                                        <th scope="col">Описание</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th scope="row" class="fw-normal">error_code</th>
-                                        <td>string</td>
-                                        <td>да</td>
-                                        <td>Код ошибки</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="fw-normal">error_description</th>
-                                        <td>string</td>
-                                        <td>да</td>
-                                        <td>Описание ошибки</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Имя</th>
+                                                <th scope="col">Тип</th>
+                                                <th scope="col">Обязательность</th>
+                                                <th scope="col">Описание</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row" class="fw-normal">error_code</th>
+                                                <td>string</td>
+                                                <td>да</td>
+                                                <td>Код ошибки</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row" class="fw-normal">error_description</th>
+                                                <td>string</td>
+                                                <td>да</td>
+                                                <td>Описание ошибки</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
                         </div>
-                        <div id="item-2 " class="mb-5">
+                        <div id="item-2" class="mb-5">
                             <h4 class="fs-title-3 fw-semibold mb-3">Коды ошибок</h4>
                             <p class="fs-paragraph-2">Данные коды возвращаются при получении HTTP ответа с кодом 400. И являются значениями поля «error_code», описанного выше.</p>
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th scope="col" style="width: 30%;">Код Описание</th>
-                                        <th scope="col" style="width: 70%;">Перевод</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th scope="row" class="fw-normal">100 Internal server error</th>
-                                        <td>Внутренняя ошибка сервера</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="fw-normal">101 Syntax error</th>
-                                        <td>Синтаксическая ошибка</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="fw-normal">102 Account lock</th>
-                                        <td>Аккаунт клиента заблокирован</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="fw-normal">103 Empty channel</th>
-                                        <td>Не задан канал для отправки сообщений</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="fw-normal">104 Invalid priority</th>
-                                        <td>Указано некорректное значение параметра priority</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="fw-normal">105 Too much IDs</th>
-                                        <td>Передано слишком много идентификаторов сообщений</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="fw-normal">202 Empty recipient</th>
-                                        <td>Адрес получателя не задан (кроме канала email)</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="fw-normal">204 Empty email address</th>
-                                        <td>Адрес электронной почты получателя не задан (для канала email)</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="fw-normal">205 Empty message-id</th>
-                                        <td>Идентификатор сообщения не задан</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="fw-normal">206 Invalid variables</th>
-                                        <td>Указано некорректное значение параметра variables</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="fw-normal">301 Invalid localtime</th>
-                                        <td>Указано некорректное значение параметра localtime</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="fw-normal">302 Invalid start-datetime</th>
-                                        <td>Указано некорректное значение параметра start-datetime</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="fw-normal">303 Invalid end-datetime</th>
-                                        <td>Указано некорректное значение параметра end-datetime</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="fw-normal">304 Invalid allowedstarttime</th>
-                                        <td>Указано некорректное значение параметра allowedstarttime</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="fw-normal">305 Invalid allowedendtime</th>
-                                        <td>Указано некорректное значение параметра allowedendtime</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="fw-normal">306 Invalid send-evenly</th>
-                                        <td>Указано некорректное значение параметра send-evenly</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="fw-normal">401 Empty originator</th>
-                                        <td>Адрес отправителя не указан</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="fw-normal">402 Empty application</th>
-                                        <td>Приложение не указано</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="fw-normal">403 Empty ttl</th>
-                                        <td>Значение ttl не указано (если задано несколько каналов отправки)</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="fw-normal">404 Empty content</th>
-                                        <td>Содержимое сообщения не указано</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="fw-normal">405 Content error</th>
-                                        <td>Неправильный формат содержимого контента</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="fw-normal">406 Invalid content</th>
-                                        <td>Недопустимое значение контента для указанного канала</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="fw-normal">407 Invalid ttl</th>
-                                        <td>Неправильно указано значение времени ожидания доставки</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="fw-normal">408 Invalid attached files</th>
-                                        <td>Прикрепленные файлы имеют слишком большой объем</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="fw-normal">410 Invalid retry-attempts</th>
-                                        <td>Неправильно указано значение количества попыток дозвона</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="fw-normal">411 Invalid retry-timeout</th>
-                                        <td>Неправильно указано значение времени повторного дозвона</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" style="width: 30%;">Код Описание</th>
+                                            <th scope="col" style="width: 70%;">Перевод</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row" class="fw-normal">100 Internal server error</th>
+                                            <td>Внутренняя ошибка сервера</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" class="fw-normal">101 Syntax error</th>
+                                            <td>Синтаксическая ошибка</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" class="fw-normal">102 Account lock</th>
+                                            <td>Аккаунт клиента заблокирован</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" class="fw-normal">103 Empty channel</th>
+                                            <td>Не задан канал для отправки сообщений</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" class="fw-normal">104 Invalid priority</th>
+                                            <td>Указано некорректное значение параметра priority</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" class="fw-normal">105 Too much IDs</th>
+                                            <td>Передано слишком много идентификаторов сообщений</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" class="fw-normal">202 Empty recipient</th>
+                                            <td>Адрес получателя не задан (кроме канала email)</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" class="fw-normal">204 Empty email address</th>
+                                            <td>Адрес электронной почты получателя не задан (для канала email)</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" class="fw-normal">205 Empty message-id</th>
+                                            <td>Идентификатор сообщения не задан</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" class="fw-normal">206 Invalid variables</th>
+                                            <td>Указано некорректное значение параметра variables</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" class="fw-normal">301 Invalid localtime</th>
+                                            <td>Указано некорректное значение параметра localtime</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" class="fw-normal">302 Invalid start-datetime</th>
+                                            <td>Указано некорректное значение параметра start-datetime</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" class="fw-normal">303 Invalid end-datetime</th>
+                                            <td>Указано некорректное значение параметра end-datetime</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" class="fw-normal">304 Invalid allowedstarttime</th>
+                                            <td>Указано некорректное значение параметра allowedstarttime</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" class="fw-normal">305 Invalid allowedendtime</th>
+                                            <td>Указано некорректное значение параметра allowedendtime</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" class="fw-normal">306 Invalid send-evenly</th>
+                                            <td>Указано некорректное значение параметра send-evenly</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" class="fw-normal">401 Empty originator</th>
+                                            <td>Адрес отправителя не указан</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" class="fw-normal">402 Empty application</th>
+                                            <td>Приложение не указано</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" class="fw-normal">403 Empty ttl</th>
+                                            <td>Значение ttl не указано (если задано несколько каналов отправки)</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" class="fw-normal">404 Empty content</th>
+                                            <td>Содержимое сообщения не указано</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" class="fw-normal">405 Content error</th>
+                                            <td>Неправильный формат содержимого контента</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" class="fw-normal">406 Invalid content</th>
+                                            <td>Недопустимое значение контента для указанного канала</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" class="fw-normal">407 Invalid ttl</th>
+                                            <td>Неправильно указано значение времени ожидания доставки</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" class="fw-normal">408 Invalid attached files</th>
+                                            <td>Прикрепленные файлы имеют слишком большой объем</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" class="fw-normal">410 Invalid retry-attempts</th>
+                                            <td>Неправильно указано значение количества попыток дозвона</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" class="fw-normal">411 Invalid retry-timeout</th>
+                                            <td>Неправильно указано значение времени повторного дозвона</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                         <div id="item-3" class="mb-5">
                             <h4 class="fs-title-3 fw-semibold mb-3">Отправить сообщения</h4>
@@ -252,246 +306,360 @@
                         <div id="item-3-1">
                             <h4 class="fs-title-3 fw-semibold mb-3">Параметры запроса</h4>
                             <p class="fs-paragraph-2 fw-semibold">Общие параметры.</p>
-                            <table class="table mb-4">
-                                <thead>
-                                    <tr>
-                                        <th scope="col" style="width: 20%;">Название</th>
-                                        <th scope="col" style="width: 20%;">Тип</th>
-                                        <th scope="col" style="width: 20%;">Обязательность</th>
-                                        <th scope="col" style="width: 40%;">Описание</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th scope="row" class="fw-normal">templateid</th>
-                                        <td>string</td>
-                                        <td>нет</td>
-                                        <td>Идентификатор шаблона для отправки сообщения</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="fw-normal">priority</th>
-                                        <td>string</td>
-                                        <td>нет</td>
-                                        <td>Приоритет: 2 - низкий, 4 - обычный, 6 - высокий, 8 - наивысший. Если не указан, то используется 4</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="fw-normal">timing</th>
-                                        <td>object</td>
-                                        <td>нет</td>
-                                        <td>Временные настройки</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="fw-normal">sms</th>
-                                        <td>object</td>
-                                        <td>нет</td>
-                                        <td>Параметры для отправки по соответствующему каналу</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="fw-normal">call</th>
-                                        <td>object</td>
-                                        <td>нет</td>
-                                        <td>Параметры для отправки по соответствующему каналу</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="fw-normal">messages</th>
-                                        <td>array</td>
-                                        <td>нет</td>
-                                        <td>Параметры для отправки по соответствующему каналу</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <div class="table-responsive">
+                                <table class="table mb-4">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" style="width: 20%;">Название</th>
+                                            <th scope="col" style="width: 20%;">Тип</th>
+                                            <th scope="col" style="width: 20%;">Обязательность</th>
+                                            <th scope="col" style="width: 40%;">Описание</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row" class="fw-normal">templateid</th>
+                                            <td>string</td>
+                                            <td>нет</td>
+                                            <td>Идентификатор шаблона для отправки сообщения</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" class="fw-normal">priority</th>
+                                            <td>string</td>
+                                            <td>нет</td>
+                                            <td>Приоритет: 2 - низкий, 4 - обычный, 6 - высокий, 8 - наивысший. Если не указан, то используется 4</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" class="fw-normal">timing</th>
+                                            <td>object</td>
+                                            <td>нет</td>
+                                            <td>Временные настройки</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" class="fw-normal">sms</th>
+                                            <td>object</td>
+                                            <td>нет</td>
+                                            <td>Параметры для отправки по соответствующему каналу</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" class="fw-normal">call</th>
+                                            <td>object</td>
+                                            <td>нет</td>
+                                            <td>Параметры для отправки по соответствующему каналу</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" class="fw-normal">messages</th>
+                                            <td>array</td>
+                                            <td>нет</td>
+                                            <td>Параметры для отправки по соответствующему каналу</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                             <p class="fs-paragraph-2 fw-semibold">Параметры объекта timing.</p>
-                            <table class="table mb-4">
-                                <thead>
-                                    <tr>
-                                        <th scope="col" style="width: 20%;">Название</th>
-                                        <th scope="col" style="width: 20%;">Тип</th>
-                                        <th scope="col" style="width: 20%;">Обязательность</th>
-                                        <th scope="col" style="width: 40%;">Описание</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th scope="row" class="fw-normal">templateid</th>
-                                        <td>string</td>
-                                        <td>нет</td>
-                                        <td>Идентификатор шаблона для отправки сообщения</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="fw-normal">priority</th>
-                                        <td>string</td>
-                                        <td>нет</td>
-                                        <td>Приоритет: 2 - низкий, 4 - обычный, 6 - высокий, 8 - наивысший. Если не указан, то используется 4</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="fw-normal">timing</th>
-                                        <td>object</td>
-                                        <td>нет</td>
-                                        <td>Временные настройки</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="fw-normal">sms</th>
-                                        <td>object</td>
-                                        <td>нет</td>
-                                        <td>Параметры для отправки по соответствующему каналу</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="fw-normal">call</th>
-                                        <td>object</td>
-                                        <td>нет</td>
-                                        <td>Параметры для отправки по соответствующему каналу</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="fw-normal">messages</th>
-                                        <td>array</td>
-                                        <td>нет</td>
-                                        <td>Параметры для отправки по соответствующему каналу</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <div class="table-responsive">
+                                <table class="table mb-4">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" style="width: 20%;">Название</th>
+                                            <th scope="col" style="width: 20%;">Тип</th>
+                                            <th scope="col" style="width: 20%;">Обязательность</th>
+                                            <th scope="col" style="width: 40%;">Описание</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row" class="fw-normal">templateid</th>
+                                            <td>string</td>
+                                            <td>нет</td>
+                                            <td>Идентификатор шаблона для отправки сообщения</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" class="fw-normal">priority</th>
+                                            <td>string</td>
+                                            <td>нет</td>
+                                            <td>Приоритет: 2 - низкий, 4 - обычный, 6 - высокий, 8 - наивысший. Если не указан, то используется 4</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" class="fw-normal">timing</th>
+                                            <td>object</td>
+                                            <td>нет</td>
+                                            <td>Временные настройки</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" class="fw-normal">sms</th>
+                                            <td>object</td>
+                                            <td>нет</td>
+                                            <td>Параметры для отправки по соответствующему каналу</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" class="fw-normal">call</th>
+                                            <td>object</td>
+                                            <td>нет</td>
+                                            <td>Параметры для отправки по соответствующему каналу</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" class="fw-normal">messages</th>
+                                            <td>array</td>
+                                            <td>нет</td>
+                                            <td>Параметры для отправки по соответствующему каналу</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                             <p class="fs-paragraph-2 fw-semibold">Параметры объекта content для sms</p>
-                            <table class="table mb-4">
-                                <thead>
-                                    <tr>
-                                        <th scope="col" style="width: 20%;">Название</th>
-                                        <th scope="col" style="width: 20%;">Тип</th>
-                                        <th scope="col" style="width: 20%;">Обязательность</th>
-                                        <th scope="col" style="width: 40%;">Описание</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th scope="row" class="fw-normal">originator</th>
-                                        <td>string</td>
-                                        <td>нет</td>
-                                        <td>Адрес отправителя</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <div class="table-responsive">
+                                <table class="table mb-4">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" style="width: 20%;">Название</th>
+                                            <th scope="col" style="width: 20%;">Тип</th>
+                                            <th scope="col" style="width: 20%;">Обязательность</th>
+                                            <th scope="col" style="width: 40%;">Описание</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row" class="fw-normal">originator</th>
+                                            <td>string</td>
+                                            <td>нет</td>
+                                            <td>Адрес отправителя</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                             <p class="fs-paragraph-2 fw-semibold">Параметры объекта content для call</p>
-                            <table class="table mb-4">
-                                <thead>
-                                    <tr>
-                                        <th scope="col" style="width: 20%;">Название</th>
-                                        <th scope="col" style="width: 20%;">Тип</th>
-                                        <th scope="col" style="width: 20%;">Обязательность</th>
-                                        <th scope="col" style="width: 40%;">Описание</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th scope="row" class="fw-normal">text</th>
-                                        <td>string</td>
-                                        <td>нет</td>
-                                        <td>Текст сообщения для синтеза TTS, до 2000 байт (1000 символов). Используется один из трех параметров: text, file,
-                                        ivrmenu. Запрос с более чем одним параметром считается некорректным</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="fw-normal">priority</th>
-                                        <td>string</td>
-                                        <td>нет</td>
-                                        <td>Приоритет: 2 - низкий, 4 - обычный, 6 - высокий, 8 - наивысший. Если не указан, то используется 4</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="fw-normal">file</th>
-                                        <td>string</td>
-                                        <td>нет</td>
-                                        <td>Название аудиофайла. Используется один из трех параметров: text, file, ivrmenu. Запрос с более чем одним параметром
-                                        считается некорректным.</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="fw-normal">menu</th>
-                                        <td>string</td>
-                                        <td>нет</td>
-                                        <td>Название IVR-меню. Используется один из трех параметров: text, file, ivrmenu. Запрос с более чем одним параметром
-                                        считается некорректным.</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="fw-normal">retryattempts</th>
-                                        <td>Number</td>
-                                        <td>нет</td>
-                                        <td>Количество попыток повторного звонка. Допустимы только неотрицательные числа.</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="fw-normal">retry-</th>
-                                        <td>Number</td>
-                                        <td>нет</td>
-                                        <td>Интервал, через который будет произведен timeout повторный звонок, в миллисекундах</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <div class="table-responsive">
+                                <table class="table mb-4">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" style="width: 20%;">Название</th>
+                                            <th scope="col" style="width: 20%;">Тип</th>
+                                            <th scope="col" style="width: 20%;">Обязательность</th>
+                                            <th scope="col" style="width: 40%;">Описание</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row" class="fw-normal">text</th>
+                                            <td>string</td>
+                                            <td>нет</td>
+                                            <td>Текст сообщения для синтеза TTS, до 2000 байт (1000 символов). Используется один из трех параметров: text, file,
+                                            ivrmenu. Запрос с более чем одним параметром считается некорректным</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" class="fw-normal">priority</th>
+                                            <td>string</td>
+                                            <td>нет</td>
+                                            <td>Приоритет: 2 - низкий, 4 - обычный, 6 - высокий, 8 - наивысший. Если не указан, то используется 4</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" class="fw-normal">file</th>
+                                            <td>string</td>
+                                            <td>нет</td>
+                                            <td>Название аудиофайла. Используется один из трех параметров: text, file, ivrmenu. Запрос с более чем одним параметром
+                                            считается некорректным.</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" class="fw-normal">menu</th>
+                                            <td>string</td>
+                                            <td>нет</td>
+                                            <td>Название IVR-меню. Используется один из трех параметров: text, file, ivrmenu. Запрос с более чем одним параметром
+                                            считается некорректным.</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" class="fw-normal">retryattempts</th>
+                                            <td>Number</td>
+                                            <td>нет</td>
+                                            <td>Количество попыток повторного звонка. Допустимы только неотрицательные числа.</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" class="fw-normal">retry-</th>
+                                            <td>Number</td>
+                                            <td>нет</td>
+                                            <td>Интервал, через который будет произведен timeout повторный звонок, в миллисекундах</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                             <p class="fs-paragraph-2 fw-semibold">Параметры элемента массива messages.</p>
-                            <table class="table mb-4">
-                                <thead>
-                                    <tr>
-                                        <th scope="col" style="width: 20%;">Название</th>
-                                        <th scope="col" style="width: 20%;">Тип</th>
-                                        <th scope="col" style="width: 20%;">Обязательность</th>
-                                        <th scope="col" style="width: 40%;">Описание</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th scope="row" class="fw-normal">recipient</th>
-                                        <td>string</td>
-                                        <td>нет</td>
-                                        <td>Адрес получателя (как правило MSISDN), указывается строго в формате 9989xxxxxxx, без пробелов и без знака +</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="fw-normal">message-id</th>
-                                        <td>string</td>
-                                        <td>нет</td>
-                                        <td>Уникальный для системы-отправителя идентификатор сообщения должен быть уникальным для каждого отправленного или
-                                        переотправленного сообщения. Пример “abc0000001” abc = название организации. Размер поля не более 40 символов</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="fw-normal">template-id</th>
-                                        <td>string</td>
-                                        <td>нет</td>
-                                        <td>Идентификатор шаблона для отправки сообщения</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="fw-normal">priority</th>
-                                        <td>string</td>
-                                        <td>нет</td>
-                                        <td>Приоритет: low - низкий, normal - обычный, high - высокий, realtime - наивысший. Если не указан, то используется normal
-                                        Настраивается в личном кабинете.</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="fw-normal">timing</th>
-                                        <td>object</td>
-                                        <td>нет</td>
-                                        <td>Временные настройки</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="fw-normal">variables</th>
-                                        <td>array</td>
-                                        <td>нет</td>
-                                        <td>Объект параметров и их значений для подстановки в сообщение (каждый элемент представлен как запись ПАРАМЕТР: ЗНАЧЕНИЕ,
-                                        например, {“PARAM1”:”VALUE1”,”PARAM2”:”VALUE2”} ).</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="fw-normal">sms</th>
-                                        <td>object</td>
-                                        <td>нет</td>
-                                        <td>Параметры для отправки по соответствующему каналу</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="fw-normal">call</th>
-                                        <td>object</td>
-                                        <td>нет</td>
-                                        <td>Параметры для отправки по соответствующему каналу</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <div class="table-responsive">
+                                <table class="table mb-4">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" style="width: 20%;">Название</th>
+                                            <th scope="col" style="width: 20%;">Тип</th>
+                                            <th scope="col" style="width: 20%;">Обязательность</th>
+                                            <th scope="col" style="width: 40%;">Описание</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row" class="fw-normal">recipient</th>
+                                            <td>string</td>
+                                            <td>нет</td>
+                                            <td>Адрес получателя (как правило MSISDN), указывается строго в формате 9989xxxxxxx, без пробелов и без знака +</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" class="fw-normal">message-id</th>
+                                            <td>string</td>
+                                            <td>нет</td>
+                                            <td>Уникальный для системы-отправителя идентификатор сообщения должен быть уникальным для каждого отправленного или
+                                            переотправленного сообщения. Пример “abc0000001” abc = название организации. Размер поля не более 40 символов</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" class="fw-normal">template-id</th>
+                                            <td>string</td>
+                                            <td>нет</td>
+                                            <td>Идентификатор шаблона для отправки сообщения</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" class="fw-normal">priority</th>
+                                            <td>string</td>
+                                            <td>нет</td>
+                                            <td>Приоритет: low - низкий, normal - обычный, high - высокий, realtime - наивысший. Если не указан, то используется normal
+                                            Настраивается в личном кабинете.</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" class="fw-normal">timing</th>
+                                            <td>object</td>
+                                            <td>нет</td>
+                                            <td>Временные настройки</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" class="fw-normal">variables</th>
+                                            <td>array</td>
+                                            <td>нет</td>
+                                            <td>Объект параметров и их значений для подстановки в сообщение (каждый элемент представлен как запись ПАРАМЕТР: ЗНАЧЕНИЕ,
+                                            например, {“PARAM1”:”VALUE1”,”PARAM2”:”VALUE2”} ).</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" class="fw-normal">sms</th>
+                                            <td>object</td>
+                                            <td>нет</td>
+                                            <td>Параметры для отправки по соответствующему каналу</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" class="fw-normal">call</th>
+                                            <td>object</td>
+                                            <td>нет</td>
+                                            <td>Параметры для отправки по соответствующему каналу</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                             <div class="py-4 px-3 information-box mb-3">
                                 <p class="mb-0">Параметры объектов timing и объектов каналов аналогичны параметрам для общей части запроса</p>
                             </div>
                             <p class=""><span class="fw-bold">Параметры ответа:</span> Успешный запрос имеет статус 200/OK и тела ответа Request is received</p>
                         </div>
                         <div id="item-3-2">
-                            <h5>Item 3-2</h5>
-                            <p>...</p>
+                            <p class="fs-paragraph-2">Отправка статусов сообщений</p>
+                            <p class="w-lg-60">URL () партнера: /status URL () партнера используется для принудительного получения статусов отправленных сообщений от
+                            СМСЦ «Play Mobile». Статус отправляется на URL () партнера, как только получим его от сотового оператора.</p>
+                            <p class="fs-paragraph-2">Отправка единичного статуса status.json</p>
+                            <pre><code class="language-json"> 
+                            {
+                                "messages": [
+                                    {
+                                        "message-id": "",
+                                        "channel": "",
+                                        "status": "",
+                                        "status-date": "",
+                                        "description": ""
+                                    }
+                                ]
+                            }
+                            </code></pre>
+                            <p class="fs-paragraph-2">Массовая рассылка статуса status.json</p>
+                            <pre><code class="language-json">
+                    {
+                        "messages": [
+                            {
+                                "message-id": "",
+                                "channel": "",
+                                "status": "",
+                                "status-date": "",
+                                "description": ""
+                            },
+                            {
+                                "message-id": "",
+                                "channel": "",
+                                "status": "",
+                                "status-date": "",
+                                "description": ""
+                            }
+                        ]
+                    }
+
+                            </code></pre>
+                            <p class="fw-bold fs-paragraph-2">Запрос статусов возвращает следующие статусы сообщений:</p>
+                            <p class="fs-paragraph-2">
+                                Delivered - доставлено; Transmitted - передано оператору, от вас смс получили и отправили оператору, оператор еще не
+                                обработал, причиной может быть, когда абонент вне зоны сети или выключен. После 24 часов статус сменится на Доставлено.;
+                                NotDelivered - недоставлено, обычно причиной может быть то что абонент блокируется со стороны оператора (недостаточно
+                                средств или долг); Rejected - одна из основных причин в том, что номер находится в черном списке; Failed - ошибка при
+                                отправки запроса (например когда адрес отправителя указан неверно); Expired - срок жизни смс истек (когда абонент в
+                                течение суток не выходил на связь. У билайн если в течение часа).
+                            </p>
+
+                        </div>
+                        <div id="item-3-3">
+                            <h4 class="fs-title-3 fw-semibold mb-3">Примеры</h4>
+                            <p class="fs-paragraph-2">Отправка единичного сообщения</p>
+                            <pre><code class="language-json"> 
+                    {
+                        "messages": [
+                            {
+                                "recipient": "998900000000",
+                                "message-id": "abc000000001", 
+                                "sms": {
+                                    "originator": "3700",
+                                    "content": {
+                                    "text": "Test message"
+                                    }
+                                }
+                            }  
+                        ]
+                    }
+                            </code></pre>
+                            <p class="fs-paragraph-2">Отправка единичного сообщения</p>
+                            <pre><code class="language-json"> 
+        {
+            "messages": [
+                {
+                    "recipient": "9989хххххххх",
+                    "message-id": "abc00000001",
+                    "sms": {
+                        "originator": "3700",
+                        "content": {
+                        "text": "Test text"
+                        }
+                    }
+                },
+                {
+                    "recipient": "9989xxxxxxxx",
+                    "message-id": "abc00000002",
+                    "sms": {
+                        "originator": "3700",
+                        "content": {
+                            "text": "Test text 1"
+                            }
+                        }
+                    },
+                {
+                    "recipient": "998970000000", 
+                    "message-id": "abc00000003", 
+                    "sms": { 
+                        "originator": 3700, 
+                        "content": { 
+                            "text": "Test text2"
+                        }
+                    }
+                }
+            ]
+        }
+                            </code></pre>
                         </div>
                     </div>
                 </div>
@@ -549,6 +717,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
     <script src="scripts/main.js"></script>
 </body>
 

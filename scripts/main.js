@@ -14,7 +14,8 @@ $(document).ready(function() {
 	AOS.init({
 		duration: 700,
 	});
-  
+   
+  hljs.highlightAll();
 
 	//canvas rising line on a graph
 	const canvas = document.getElementById('myCanvas');

@@ -124,6 +124,9 @@ a{
 	text-decoration: none;
 	color: inherit;
 }
+.w-lg-60{
+	width: 60%;
+}
 /*home page*/
 .nav-link {
 	color: black;
@@ -390,6 +393,42 @@ video {
 .underline-top{
 	border-top: 2px solid rgba(0, 0, 0, 0.4);
 }
+.hljs-attr {
+	/* Это класс для ключей */
+	color: var(--color-dark-ocean);
+	/* Выделяем красным */
+	font-weight: bold;
+}
+.accordion-sidebar-button:not(.collapsed){
+    background: #EEEEEE;
+	color: black;
+}
+.sidebar-menu {
+	background: #EEEEEE;
+	border-bottom-right-radius: 8px;
+	border-bottom-left-radius: 8px;
+}
+.accordion-sidebar-button.collapsed{
+	background: #EEEEEE;
+}
+.nav-pills .nav-link.active,
+.nav-pills .show>.nav-link {
+	color: black;
+	background-color: transparent;
+	font-weight: 600;
+}
+.accordion-sidebar-button:not(.collapsed)::after {
+	filter: contrast(0%) brightness(0);
+}
+.sticky-top {
+	top: 30px;
+}
+.collapse-custom{
+	box-shadow: none !important;
+}
+.accordion-button:not(.collapsed){
+	box-shadow: none;
+}
 /*media*/
 @media(max-width: 1440px) {
 
@@ -495,8 +534,10 @@ video {
 				.fs-paragraph-4 {
 					font-size: 16px;
 				}
+		.w-lg-60 {
+			width: 100%;
+		}
 }
-
 @media(max-width: 768px) {
 
 	.container-fluid,
